@@ -67,20 +67,20 @@ const Page = () => {
   };
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Header />
       {/* banner */}
       <div className={`${styles.banner} relative overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="text-white">
-              <h1 className="text-5xl font-bold mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
                 THE MOST IMPORTANT INFORMATION AT A GLANCE
               </h1>
-              <p className="text-xl mb-8">
+              <p className="text-base sm:text-lg lg:text-xl mb-8">
                 Find the best current daily and fixed-term deposit offers in our comparison! Benefit from attractive terms and conditions from over 30 partner banks across Europe – with just one registration. Enjoy the advantages of free account opening and account management, with absolutely no ongoing fees.
               </p>
-              <button className="bg-[#489FB5] text-white px-8 py-4 rounded-[30px] hover:bg-opacity-90 transition-colors text-lg font-medium">
+              <button className="bg-[#489FB5] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-[30px] hover:bg-opacity-90 transition-colors text-base sm:text-lg font-medium">
                 Request your free quote now!
               </button>
             </div>
@@ -94,7 +94,7 @@ const Page = () => {
 
       {/* promotional offers section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
           Our most exclusive fixed deposit offers - available for a limited time only!
         </h2>
         
@@ -107,8 +107,8 @@ const Page = () => {
             <div className="">
               <div className="flex justify-between items-center mb-3 p-5">
                 <div>
-                  <div className="text-[#489FC6] text-xl font-medium">up to</div>
-                  <div className="text-[#489FC6] text-4xl font-bold">5.20%</div>
+                  <div className="text-[#489FC6] text-lg sm:text-xl font-medium">up to</div>
+                  <div className="text-[#489FC6] text-3xl sm:text-4xl font-bold">5.20%</div>
                 </div>
                 <div className="text-right">
                   <Image
@@ -136,8 +136,8 @@ const Page = () => {
             <div className="">
               <div className="flex justify-between items-center mb-3 p-5">
                 <div>
-                  <div className="text-[#489FC6] text-xl font-medium">up to</div>
-                  <div className="text-[#489FC6] text-4xl font-bold">4.90%</div>
+                  <div className="text-[#489FC6] text-lg sm:text-xl font-medium">up to</div>
+                  <div className="text-[#489FC6] text-3xl sm:text-4xl font-bold">4.90%</div>
                 </div>
                 <div className="text-right">
                   <Image
@@ -165,8 +165,8 @@ const Page = () => {
             <div className="">
               <div className="flex justify-between items-center mb-3 p-5">
       <div>
-                  <div className="text-[#489FC6] text-xl font-medium">up to</div>
-                  <div className="text-[#489FC6] text-4xl font-bold">4.50%</div>
+                  <div className="text-[#489FC6] text-lg sm:text-xl font-medium">up to</div>
+                  <div className="text-[#489FC6] text-3xl sm:text-4xl font-bold">4.50%</div>
                 </div>
                 <div className="text-right">
                   <Image
@@ -189,7 +189,7 @@ const Page = () => {
       </div>
       {/* offers section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
         Our most exclusive daily savings offers - available for a limited time only!
         </h2>
         
@@ -202,8 +202,8 @@ const Page = () => {
             <div className="">
               <div className="flex justify-between items-center mb-3 p-5">
                 <div>
-                  <div className="text-[#489FC6] text-xl font-medium">up to</div>
-                  <div className="text-[#489FC6] text-4xl font-bold">5.20%</div>
+                  <div className="text-[#489FC6] text-lg sm:text-xl font-medium">up to</div>
+                  <div className="text-[#489FC6] text-3xl sm:text-4xl font-bold">5.20%</div>
                 </div>
                 <div className="text-right">
                   <Image
@@ -231,8 +231,8 @@ const Page = () => {
             <div className="">
               <div className="flex justify-between items-center mb-3 p-5">
                 <div>
-                  <div className="text-[#489FC6] text-xl font-medium">up to</div>
-                  <div className="text-[#489FC6] text-4xl font-bold">4.90%</div>
+                  <div className="text-[#489FC6] text-lg sm:text-xl font-medium">up to</div>
+                  <div className="text-[#489FC6] text-3xl sm:text-4xl font-bold">4.90%</div>
                 </div>
                 <div className="text-right">
                   <Image
@@ -260,8 +260,8 @@ const Page = () => {
             <div className="">
               <div className="flex justify-between items-center mb-3 p-5">
                 <div>
-                  <div className="text-[#489FC6] text-xl font-medium">up to</div>
-                  <div className="text-[#489FC6] text-4xl font-bold">4.50%</div>
+                  <div className="text-[#489FC6] text-lg sm:text-xl font-medium">up to</div>
+                  <div className="text-[#489FC6] text-3xl sm:text-4xl font-bold">4.50%</div>
                 </div>
                 <div className="text-right">
                   <Image
@@ -288,7 +288,7 @@ const Page = () => {
 
       {/* CTA section */}
       <div className="bg-[#489FB5] py-32 text-white">
-      <h2 className="text-3xl font-bold mb-6 text-center">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
                 Discover your individual fixed-term deposit and call money offer!
               </h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -305,20 +305,20 @@ const Page = () => {
             <div>
               
               <div className="space-y-4 mb-8">
-                <p>
+                <p className="text-sm sm:text-base">
                   At Festgeld24 you will find tailor-made solutions for fixed-term deposits and call money investments that are perfectly tailored to your financial needs and goals.
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   Our comparison portal offers you a simple and transparent way to determine the best conditions and interest rates for both types of investment.
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   Benefit from personalized recommendations and secure the most attractive offers on the market - whether flexible with daily money or planning security with fixed-term deposits.
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   Start today and find the perfect offer for your investment!
                 </p>
               </div>
-              <button className="bg-[#FF9F1C] hover:bg-opacity-90 text-white font-medium rounded-full px-8 py-4 text-lg transition-colors">
+              <button className="bg-[#FF9F1C] hover:bg-opacity-90 text-white font-medium rounded-full px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg transition-colors">
                 Request your free quote now!
               </button>
             </div>
@@ -329,13 +329,13 @@ const Page = () => {
       {/* Your money deserves more section */}
       <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8 text-center">Your money deserves more!</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Your money deserves more!</h2>
           
           <div className="max-w-4xl mx-auto mb-16 text-center">
-            <p className="text-gray-700 mb-4">
+            <p className="text-sm sm:text-base text-gray-700 mb-4">
               Festgeld24 is an independent comparison portal specializing in fixed-income investments such as fixed-term deposits and overnight deposits. We provide private investors with access to attractive investment offers that are otherwise often reserved for institutional investors.
             </p>
-            <p className="text-gray-700">
+            <p className="text-sm sm:text-base text-gray-700">
               If you want to plan your wealth accumulation in a targeted manner, you are guaranteed to find the right offer for your savings goals with us - with the best conditions and the highest level of security.
             </p>
           </div>
@@ -348,8 +348,8 @@ const Page = () => {
                   <path d="M9 7H15M7 11H17M4.5 17H19.5M11.25 21L18 14.25L11.25 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4">Fixed-interest investments</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg sm:text-xl font-bold mb-4">Fixed-interest investments</h3>
+              <p className="text-sm sm:text-base text-gray-600">
                 You have the flexibility to determine how your interest income is paid out—whether monthly, quarterly, annually, or at the end of the term. Easily adapt your investment to your individual needs.
               </p>
             </div>
@@ -362,8 +362,8 @@ const Page = () => {
                   <path d="M10.5 21H14.5C16.7091 21 18.5 19.2091 18.5 17C18.5 14.7909 16.7091 13 14.5 13H9.5C7.29086 13 5.5 11.2091 5.5 9C5.5 6.79086 7.29086 5 9.5 5H13.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4">Investments</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg sm:text-xl font-bold mb-4">Investments</h3>
+              <p className="text-sm sm:text-base text-gray-600">
                 Optimize your wealth creation with a reliable partner who understands your financial goals and offers you customized solutions.
               </p>
             </div>
@@ -375,8 +375,8 @@ const Page = () => {
                   <path d="M2 7L10.1649 12.7154C10.8261 13.1783 11.1567 13.4097 11.5163 13.4993C11.8339 13.5785 12.1661 13.5785 12.4837 13.4993C12.8433 13.4097 13.1739 13.1783 13.8351 12.7154L22 7M6.8 20H17.2C18.8802 20 19.7202 20 20.362 19.673C20.9265 19.3854 21.3854 18.9265 21.673 18.362C22 17.7202 22 16.8802 22 15.2V8.8C22 7.11984 22 6.27976 21.673 5.63803C21.3854 5.07354 20.9265 4.6146 20.362 4.32698C19.7202 4 18.8802 4 17.2 4H6.8C5.11984 4 4.27976 4 3.63803 4.32698C3.07354 4.6146 2.6146 5.07354 2.32698 5.63803C2 6.27976 2 7.11984 2 8.8V15.2C2 16.8802 2 17.7202 2.32698 18.362C2.6146 18.9265 3.07354 19.3854 3.63803 19.673C4.27976 20 5.11984 20 6.8 20Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4">Daily money</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg sm:text-xl font-bold mb-4">Daily money</h3>
+              <p className="text-sm sm:text-base text-gray-600">
                 With a call money account, you remain flexible and can invest or access your money at any time - unlike a fixed-term deposit, which has a fixed term.
               </p>
             </div>
@@ -390,7 +390,7 @@ const Page = () => {
       {/* Testimonial slider section */}
       <div className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-10 text-center">What our partner banks say about Festgeld24</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-10 text-center">What our partner banks say about Festgeld24</h2>
           
           <div className="relative">
             {/* Testimonial slides container */}
@@ -401,7 +401,7 @@ const Page = () => {
                   {testimonials.map((testimonial, index) => (
                     <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
                       <div className="bg-white rounded-lg">
-                        <p className="text-gray-700 text-lg text-center mb-8">
+                        <p className="text-base sm:text-lg text-gray-700 text-center mb-8">
                           "{testimonial.text}"
                         </p>
                       </div>
