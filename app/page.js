@@ -3,12 +3,15 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/header'
 import Footer from './components/footer'
+import Cards from './components/cards'
 import Image from 'next/image'
 import logo from './images/logo.png'
 import styles from './styles/Banner.module.css'
 import stander from './images/santander.png'
 import ing from './images/ing.png'
 import bnp from './images/bnp.png'
+import Festgid from './components/festgid'
+import Table from './components/table'
 
 const Page = () => {
   // Testimonial slider state
@@ -86,51 +89,8 @@ const Page = () => {
       </div>
 
       {/* cards section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="bg-white rounded-lg shadow-lg p-8 transition-colors duration-200 hover:bg-[#F3F4F6] cursor-pointer">
-            <div className="text-[#489FB5] font-medium mb-4">Optimized for demanding investors</div>
-            <h2 className="text-2xl font-bold mb-4">Fixed Deposit Plus</h2>
-            <div className="flex flex-col justify-between h-[calc(100%-160px)]">
-              <p className="text-gray-600">Individual investment offer – fast and tailored within 24 hours</p>
-              <div className="flex justify-end mt-8">
-                <button className="bg-[#489FB5] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors w-50">
-                  Request a quote now
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-white rounded-lg shadow-lg p-8 transition-colors duration-200 hover:bg-[#F3F4F6] cursor-pointer">
-            <div className="text-[#489FB5] font-medium mb-4">Perfect for strategic investors</div>
-            <h2 className="text-2xl font-bold mb-4">Daily Money Plus</h2>
-            <div className="flex flex-col justify-between h-[calc(100%-160px)]">
-              <p className="text-gray-600">Get your perfectly tailored offer in 24 hours</p>
-              <div className="flex justify-end mt-8">
-                <button className="bg-[#489FB5] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors w-50">
-                  Request a quote now
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-white rounded-lg shadow-lg p-8 transition-colors duration-200 hover:bg-[#F3F4F6] cursor-pointer">
-            <div className="text-[#489FB5] font-medium mb-4">For experienced investors</div>
-            <h2 className="text-2xl font-bold mb-4">Fixed deposit pool</h2>
-            <div className="flex flex-col justify-between h-[calc(100%-160px)]">
-              <p className="text-gray-600">Bundle fixed-term deposits cleverly, make optimal use of interest</p>
-              <div className="flex justify-end mt-8">
-                <button className="bg-[#489FB5] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors w-50">
-                  Request a quote now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Cards />
+      
 
       {/* promotional offers section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -324,52 +284,7 @@ const Page = () => {
       </div>
 
       {/* Why Festgeld24 section */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8 text-center">Why Festgeld24?</h2>
-          
-          <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-gray-700 text-lg">
-              With Festgeld24, you benefit from the security of a fixed interest rate that remains unchanged throughout the entire term. This allows you to plan your return precisely from the start. As a general rule, the longer the term, the higher the interest rate. A comprehensive comparison of fixed deposit interest rates is therefore essential to find the best offers with the most attractive terms – and Festgeld24 can help you with this.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100 text-center">
-              <div className="w-16 h-16 mx-auto mb-4 text-[#489FC6]">
-                <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 21H21M3 18H21M7 10.5V14.5M12 8.5V14.5M17 4.5V14.5M7.2 4H16.8C17.9201 4 18.4802 4 18.908 4.21799C19.2843 4.40973 19.5903 4.71569 19.782 5.09202C20 5.51984 20 6.0799 20 7.2V16.8C20 17.9201 20 18.4802 19.782 18.908C19.5903 19.2843 19.2843 19.5903 18.908 19.782C18.4802 20 17.9201 20 16.8 20H7.2C6.0799 20 5.51984 20 5.09202 19.782C4.71569 19.5903 4.40973 19.2843 4.21799 18.908C4 18.4802 4 17.9201 4 16.8V7.2C4 6.0799 4 5.51984 4.21799 5.09202C4.40973 4.71569 4.71569 4.40973 5.09202 4.21799C5.51984 4 6.0799 4 7.2 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Predictable returns</h3>
-              <p className="text-gray-600 mb-4">Fixed interest rate over the entire term – no surprises, complete planning security.</p>
-            </div>
-            
-            {/* Feature 2 */}
-            <div className="bg-white p-6 rounded-xl shadow-xl border border-gray-100 text-center self-start mt-12">
-              <div className="w-14 h-14 mx-auto mb-3 text-[#489FC6]">
-                <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 10.5H17M7 14.5H17M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold mb-2">Attractive interest rates</h3>
-              <p className="text-gray-600 text-sm">Benefit from rising interest rates with longer terms and secure top conditions.</p>
-            </div>
-            
-            {/* Feature 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100 text-center">
-              <div className="w-16 h-16 mx-auto mb-4 text-[#489FC6]">
-                <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 10H21M7 15H8M12 15H13M6 19H18C19.6569 19 21 17.6569 21 16V8C21 6.34315 19.6569 5 18 5H6C4.34315 5 3 6.34315 3 8V16C3 17.6569 4.34315 19 6 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Simple comparison</h3>
-              <p className="text-gray-600 mb-4">Find the best fixed-term deposit offers across Europe quickly and transparently – all with just one registration.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Festgid />
 
       {/* CTA section */}
       <div className="bg-[#489FB5] py-32 text-white">
@@ -470,128 +385,7 @@ const Page = () => {
       </div>
 
       {/* Investment comparison table */}
-      <div className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-12 text-center">Attractive fixed-interest offers for your asset growth</h2>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr>
-                  <th className="bg-[#489FB5] text-white py-4 px-4 border border-[#3D8DA3] text-left">Investment form</th>
-                  <th className="bg-[#489FB5] text-white py-4 px-4 border border-[#3D8DA3] text-center">Solid investment</th>
-                  <th className="bg-[#489FB5] text-white py-4 px-4 border border-[#3D8DA3] text-center">Growth opportunity</th>
-                  <th className="bg-[#489FB5] text-white py-4 px-4 border border-[#3D8DA3] text-center">Premium investment</th>
-                  <th className="bg-[#489FB5] text-white py-4 px-4 border border-[#3D8DA3] text-center">Exclusive option</th>
-                  <th className="bg-[#489FB5] text-white py-4 px-4 border border-[#3D8DA3] text-center">Top returns</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Interest / return pa</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">from 3.50%</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">4.80% to 5.50%</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">6.00%</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">4.50% - 7.00%</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">up to 8% pa</td>
-                </tr>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Minimum investment</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">5,000.00 €</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">10,000.00 €</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">15,000.00 €</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">20,000.00 €</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">from 1,000.00 €</td>
-                </tr>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Duration</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">from 6 months</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">1 to 3 years</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">3 to 5 years</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">from 2 years</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">flexible up to 10 years</td>
-                </tr>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Interest payment</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">monthly</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">quarterly</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">yearly</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">as desired</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">daily (daily money)</td>
-                </tr>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Advantages</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-sm">Cooperation with leading EU banks High stability through top ratings EU-wide deposit guarantee</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-sm">Long term partnerships with prime banks Attractive conditions through exclusive banking agreements</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-sm">Premium offers from renowned financial institutions Experience from international financial markets</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-sm">Direct processing via prime banks Highest security standards according to EU regulations</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-sm">Exclusive conditions with top international banks Access to high-yield markets</td>
-                </tr>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Security</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★★</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Availability</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★★</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="bg-[#E9F3F6] py-3 px-4 border border-gray-300 font-medium">Return opportunities</td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★☆☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★★</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★☆</div>
-                  </td>
-                  <td className="bg-white py-3 px-4 border border-gray-300 text-center">
-                    <div className="flex justify-center text-[#FFB800]">★★★★★</div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <button className="bg-[#FF9F1C] text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors text-lg font-medium">
-              Request your free quote now!
-            </button>
-          </div>
-        </div>
-      </div>
+      <Table />
 
       {/* Testimonial slider section */}
       <div className="py-16 bg-white border-t border-gray-100">

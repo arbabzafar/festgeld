@@ -1,11 +1,25 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import logo from '../images/logo.png'
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState(null)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+    setActiveDropdown(null) // Reset active dropdown when closing menu
+  }
+
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName)
+  }
+
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white shadow-sm relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
           <div className="flex items-center">
@@ -19,16 +33,33 @@ const Header = () => {
               />
             </Link>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMenu}
+            className="hidden max-[767px]:block rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none"
+          >
+            {!isMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+          </button>
           
-          <nav className="flex items-center space-x-8">
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-gray-900 py-4">
+          {/* Desktop Navigation */}
+          <nav className="hidden min-[768px]:flex items-center space-x-8">
+            <div className="relative group hover:cursor-pointer">
+              <button className="text-black hover:text-gray-900 py-4 font-semibold">
                 Save
               </button>
-              <div className="absolute left-[-383px] top-[calc(100%-8px)] invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 ease-in-out">
+              <div className="absolute left-[-383px] top-[calc(100%-8px)] invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 ease-in-out z-50">
                 <div className="pt-4">
                   <div className="bg-white rounded-lg shadow-lg p-4 w-[500px]">
-                    <Link href="/daily-money" className="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg transition duration-150">
+                    <Link href="/savemoney" className="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg transition duration-150">
                       <div className="bg-[#5BB5D1] rounded-full p-3">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -40,7 +71,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link href="/fixed-deposit" className="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg mt-2 transition duration-150">
+                    <Link href="/fixeddeposit" className="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg mt-2 transition duration-150">
                       <div className="bg-[#5BB5D1] rounded-full p-3">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -56,14 +87,14 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-gray-900 py-4">
+            <div className="relative group hover:cursor-pointer">
+              <button className="text-black hover:text-gray-900 py-4 font-semibold">
                 Financial knowledge
               </button>
-              <div className="absolute left-[-283px] top-[calc(100%-8px)] invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 ease-in-out">
+              <div className="absolute left-[-283px] top-[calc(100%-8px)] invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 ease-in-out z-50">
                 <div className="pt-4">
                   <div className="bg-white rounded-lg shadow-lg p-4 w-[500px]">
-                    <Link href="/save-info" className="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg transition duration-150">
+                    <Link href="/save" className="flex items-center space-x-4 p-3 hover:bg-gray-50 rounded-lg transition duration-150">
                       <div className="bg-[#5BB5D1] rounded-full p-3">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -115,8 +146,8 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-gray-900 py-4">
+            <div className="relative group hover:cursor-pointer">
+              <button className="text-black hover:text-gray-900 py-4 font-semibold">
                 Help and contact
               </button>
               <div className="absolute right-0 top-[calc(100%-8px)] invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-150 ease-in-out">
@@ -149,6 +180,135 @@ const Header = () => {
             </div>
           </nav>
         </div>
+      </div>
+
+      {/* Mobile Navigation Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={toggleMenu} />
+      )}
+
+      {/* Mobile Navigation Menu */}
+      <div 
+        className={`fixed top-0 left-0 w-full h-full bg-white transform transition-transform duration-300 ease-in-out z-50 ${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="flex justify-between items-center p-4 border-b">
+          <Link href="/" onClick={() => setIsMenuOpen(false)}>
+            <Image
+              src={logo}
+              alt="Festgeld24 Logo"
+              width={150}
+              height={40}
+              priority
+            />
+          </Link>
+          <button
+            onClick={toggleMenu}
+            className="p-2 text-gray-700 hover:bg-gray-100 rounded-full"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+        <nav className="p-4">
+          <div className="space-y-4">
+            {/* Sparen */}
+            <div className="">
+              <button 
+                onClick={() => toggleDropdown('sparen')}
+                className="flex items-center justify-between w-full text-left text-black font-semibold py-4 px-2"
+              >
+                <span>Sparen</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className={`h-5 w-5 transform transition-transform duration-200 ${activeDropdown === 'sparen' ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeDropdown === 'sparen' ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="px-4 py-2 space-y-2">
+                  <Link href="/savemoney" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    Daily money
+                  </Link>
+                  <Link href="/fixeddeposit" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    Fixed deposit
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Finanzwissen */}
+            <div className="">
+              <button 
+                onClick={() => toggleDropdown('finanzwissen')}
+                className="flex items-center justify-between w-full text-left text-black font-semibold py-4 px-2"
+              >
+                <span>Finanzwissen</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className={`h-5 w-5 transform transition-transform duration-200 ${activeDropdown === 'finanzwissen' ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeDropdown === 'finanzwissen' ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="px-4 py-2 space-y-2">
+                  <Link href="/save-info" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    Save
+                  </Link>
+                  <Link href="/investment-info" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    Investment
+                  </Link>
+                  <Link href="/tax-information" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    Tax information
+                  </Link>
+                  <Link href="/deposit-protection" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    Deposit protection
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Hilfe und Kontakt */}
+            <div className="">
+              <button 
+                onClick={() => toggleDropdown('hilfe')}
+                className="flex items-center justify-between w-full text-left text-black font-semibold py-4 px-2"
+              >
+                <span>Hilfe und Kontakt</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className={`h-5 w-5 transform transition-transform duration-200 ${activeDropdown === 'hilfe' ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeDropdown === 'hilfe' ? 'max-h-96' : 'max-h-0'}`}>
+                <div className="px-4 py-2 space-y-2">
+                  <a href="mailto:info@festgeld24.de" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    info@festgeld24.de
+                  </a>
+                  <a href="tel:0211 8797511" className="block py-3 text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                    0211 8797511
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
     </header>
   )
