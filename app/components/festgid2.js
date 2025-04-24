@@ -4,8 +4,8 @@ import logo from '../images/Whitelogo.png'
 function Festgid2() {
   return (
     <div>
-        <div className="bg-[#5EBCCA]">
-      <div className="flex items-center justify-between py-12 px-16 max-w-4xl mx-auto">
+        <div className="bg-[#489FB5]">
+      <div className="flex items-center justify-between py-12 px-16 max-w-5xl mx-auto">
         <div className="w-1/3 flex justify-center">
           <Image src={logo} alt="Festgeld24 Logo" className="w-44" />
         </div>
